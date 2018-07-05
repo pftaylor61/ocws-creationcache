@@ -1,0 +1,74 @@
+Log for Geocache plugin development
+===================================
+
+I am now going to call these Creationcaches.
+
+08/16/2015
+==========
+
+Created mirror site at http://localhost/7ws1/
+Created plugin folder ocws-creationcache
+Added plugin code to top of ocws-creationcache.php, so that the plugin can be activated
+Added functions to plugin file for creating a Google Map insert, and a random code for Creationcache id creation.
+
+08/17/2015
+==========
+
+Created Github repository
+
+8/20/2015
+=========
+
+I have separated functions out of the original plugin file (ocws_creationcache.php).
+The new files are functions.php and initialize.php
+
+initialize.php contains the custom page type code, so that the Creation Cache material appears in its own menu in the dashboard.
+
+8/27/2015
+=========
+
+A config file has now been created.
+
+Today's project was to work had at producing the necessary functions to make the UI in the dashboard. This has now been achieved, though it is not pretty. The UI needs to be prettified!
+
+The next step is to get the information saved. At the moment, I am using postmeta-data. I have toyed with the idea of having a custom database table - indeed, I have created a function to initialize the creation of this table at activation. However, if I can get the postmeta data to work, them I will remove the tahle creation routine.
+
+I also created a dashboard widget, to advertize the plugin. This can be dressed up better, when the plugin is ready for packaging.
+
+8/28/2015
+=========
+
+The basics of the plugin are now working. I can create, save, edit and delete Creation Caches. I can also display these through the website. I have found out how to style these elements, to make them look good. I have developed a system for creating the star ratings for difficulty and terrain, just as found on the geocaching website.
+
+However, the only way I could achieve display was to create a template file, called single-creationcache.php, which hade to be located inside the theme that I am using. Now this is not satisfactory. I need to find a way of keeping this template inside the plugin directory.
+
+Also still required is a method of displaying an archive of these creation caches. I could probably do this by putting a template in the theme, but, again, I want to find a way of doing this without resorting to that method.
+
+A second job still required is to find a way of dsplaying the creation-type information (my taxonomy).
+
+Finally, I have not yet produced the .gpx and .loc files. I would like to do this on-the-fly, and enable the file to be deleted again, when leaving the page, or by some other means.
+
+8/31/2015
+=========
+
+Some features have been tidied up. I added a timestamp field, to display when the cache was created.
+
+I have prepared the code that will be needed when the .gpx file is produced.
+
+I have added reminders in the functions.php file:
+When a creation cache is saved, I need to test to see whether the .gpx and .loc files appropriate exist. If they do not exist, then they must be created and saved somewhere appropriate. If they exist, then the routine must update them.
+
+Hooks exist for the trashing of custom post types. When the trash link is clicked, I need a whole functiion to delete all the necessary post meta data, and also the 2 files that were made.
+
+9/3/2015
+========
+
+I have discovered how to keep templates for single andd archive pages within the plugin, and to force Wordpress to use them if my Creation Cache custom post type is used. The templates for both these have now been removed from the theme again, and everything is working.
+
+The plugin also tests to see of a folder exists, to store the .gpx files in. If the folder does not exist, then the plugin creates it. 
+
+I have also worked out how to make the files, and how to link to them from the display pages.
+
+The next task is to find a way of deleting the files, when the creation cache entry is deleted.
+
+Then, uninstallation of the plugin should delete the entire special folder.
