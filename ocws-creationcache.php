@@ -7,7 +7,7 @@ Plugin URI: http://oldcastleweb.com/pws/plugins
 
 Description: This plugin creates a new page type, called creationcache, which displays Creation caches - a version of the geocache system. The plugin has been produced by <a href="http://www.oldcastleweb.com" target="_blank">Old Castle Web Solutions</a>.<br /><br /> The actual name of the caches can be changed from Creation Caches to any other name that you choose, by ediiting a simple configuration file. In order to explain the game of creation caching, there is an extensive backend information page, which appears where a settings page would normally be. This page explains to the site owner how they can go about administering a Creation Cache section on their Wordpress website.<br /><br />I am quite satisfied with the way the system works so far. However, I would welcome reports to the website above.
 
-Version: 1.3
+Version: 2.0
 Author: Paul Taylor
 Author URI: http://oldcastleweb.com/pws/about
 License: GPL2

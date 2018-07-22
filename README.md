@@ -1,9 +1,10 @@
-![ocws-creationcache](./images/castlelogo80x80.png)
+![ocws-creationcache](./images/castlelogo80x80.png)![ocws-creationcache](./images/celticcross80x80.png)
 
-# ocws-creationcache
+# Creation Cache Plugin
+## ocws-creationcache
 A plugin to store creationcaches (similar to "geocaches&trade;" and display them, also producing both a .gpx and .loc file for download. 
 
-Geocache&trade; is a trademark. But there are other organizations also making these sort of caches (Opencache, EarthCache, TerraCache). Many of these contain educational geological information. I want to be able to use my own information, often interpreting things from a creationist viewpoint. However, you do not need to share my biblical and creationist beliefs to realize that an open source caching system, that can work as a plugin to a Wordpress installation, is likely to be very useful.
+Geocache&trade; is a trademark. But there are other organizations also making these sort of caches (Opencache, EarthCache, TerraCache). Many of these contain educational geological information. I want to be able to use my own information, often interpreting things from a creationist viewpoint. However, you do not need to share my biblical and creationist beliefs to realize that an open source caching system, that can work as a plugin to a Wordpress installation, is likely to be very useful. See below for instructions on how to amend this plugin, for your own type of caches.
 
 ## Statement of the Project
 
@@ -19,6 +20,9 @@ Consequently, the purpose of this project is to provide such a plugin.
 * The user admin needed some information on the use and deployment of caches, in my opinion, so I created an extensive information page, to go where the settings page normally goes. I suspect that Wordpress will not like this.
 * There is also a dashboard widget, which links to the info page mentioned above
 * Custom templates were created to display caches, and also cache lists (archives)
+
+## Version 2.0
+In version 2.0, the display of the infobox at the right of the Creation cache page has been much improved. Additionally, this section will now float properly, when viewed on a small screen.
 
 ## Version 1.3
 The Cache files can now be directly downloaded.
@@ -49,3 +53,6 @@ It would be useful in future to be able to upload a .gpx file, for the plugin to
 ## Plea for assistance
 
 I am well aware that the very nature of GitHub is to encourage collaboration. I am a fairly new coder, and I should emphasize that this code is at the very edges of my knowledge. I would appreciate feedback, help and constructive criticism. Or, if you simply want to add some new functions, please be my guest! I am, after all, a very old man to be programming (54) and most of you are young enough to be my children, so I am sure your eyes are better at finding bugs than mine. Plus, I have not really got my head around object programming in PHP5, and I feel sure that my plugin would be better if it had used objects.
+
+## Amending the plugin with the config file.
+All the names and labels, associated with this plugin, are contained in a file called ocws-creationcache-config.php. This is where all the name definitions are kept. You can easily adapt this plugin for your own use, by amending this file.

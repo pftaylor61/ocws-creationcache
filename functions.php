@@ -473,9 +473,15 @@ function ocwscc_get_template_part($osection, $opagetype, $post) {
 		$ocwscc_gpstate = get_post_meta( $post->ID, '_ocwscc_gpstate', true);
 		$ocwscc_shortdesc=  get_post_meta($post->ID, '_ocwscc_gpshortdesc' , true ) ;
 		?>
-			<!-- create ocwscc_infobox section -->
+			
+		<?php
+		$ocwscc_cacheterms = get_the_term_list( $post_id,'cachetype');
+                ?>
+		<h1><a href="<?php echo get_site_url()."/".CCSLUG; ?>"><?php echo CCNAME_SG; ?></a> #<?php echo $ocwscc_ccname; ?></h1>
+                
+                <!-- create ocwscc_infobox section -->
 			<div id="ocwscc_infobox">
-				<p><strong><?php echo CCNAME_SG; ?> Details</strong></p>
+				<p><strong><?php echo CCNAME_SG." <em>".esc_html(get_the_title($post->ID))."</em>"; ?> Details</strong></p>
 				<table>
 					<tr>
 					<td class="ocwscc_tright">Longitude:</td>
@@ -505,11 +511,9 @@ function ocwscc_get_template_part($osection, $opagetype, $post) {
 				<a href="<?php echo OCWSCC_GPX_URL.$ocwscc_ccname.".loc"; ?>" download><img src="<?php echo OCWSCC_BASE_URL."/images/download_loc.png"; ?>" width="150" height="31" alt="Click to download .loc file" title=".loc" /></a>
 				</div><!-- end ocwscc_infobox_inner -->
 			</div><!-- end ocwscc_infobox -->
-			<!-- end ocwscc_infobox section -->
-		<?php
-		$ocwscc_cacheterms = get_the_term_list( $post_id,'cachetype');
-                
-		echo "<h1><a href=\"".get_site_url()."/".CCSLUG."/"."\">".CCNAME_SG."</a> #".$ocwscc_ccname."</h1>\n";
+			<!-- end ocwscc_infobox section -->    
+                    
+                <?php
                 echo "<div id=\"ocwscc-typeimg-box\" class=\"ocwscc-typeimg-box\">\n";
 
                 echo "<img src=\"" . ocwscc_ctype_image_url($post_id) . "\" alt=\"".wp_strip_all_tags($ocwscc_cacheterms)."\" title=\"".wp_strip_all_tags($ocwscc_cacheterms)."\"class=\"wp-post-image ocws-typeimg-size\" />\n";
@@ -523,9 +527,14 @@ function ocwscc_get_template_part($osection, $opagetype, $post) {
 		echo "<p><strong>".CCNAME_SG." Description</strong></p>\n";
 		get_template_part( $osection, $opagetype );
 		
-		echo "<p><strong>Short Description</strong></p>\n";
+		if (htmlspecialchars_decode($ocwscc_shortdesc)<>"") {
+                echo "<p><strong>Short Description</strong></p>\n";
 		echo htmlspecialchars_decode($ocwscc_shortdesc)."<br />";
+                }
 ?>
+          
+                
+          
                         <p>&nbsp;</p><p><strong>About <?php echo CCNAME_ACT; ?></strong></p>
                 <p><?php echo CCNAME_ACT; ?> (<em>based on Geocaching&trade;</em>) is a real-world, outdoor treasure hunting game using GPS-enabled devices. Participants navigate
 	to a specific set of GPS coordinates and then attempt to find the geocache (container) hidden at that location.</p>
