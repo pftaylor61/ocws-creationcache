@@ -21,6 +21,9 @@ Consequently, the purpose of this project is to provide such a plugin.
 * There is also a dashboard widget, which links to the info page mentioned above
 * Custom templates were created to display caches, and also cache lists (archives)
 
+## Version 2.1
+It is quite clear to me that the new Gutenberg Editor would break this plugin. Therefore, version 2.1 prevents the use of Gutenberg on Creation Cache pages, and requires the installation of the Classic Editor.
+
 ## Version 2.0
 In version 2.0, the display of the infobox at the right of the Creation cache page has been much improved. Additionally, this section will now float properly, when viewed on a small screen.
 

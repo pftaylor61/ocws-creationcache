@@ -12,7 +12,7 @@
 define("CCNAME_SG","Creation Cache"); // Change 'Creation Cache' for the singular term for your caches
 define("CCNAME_PL","Creation Caches"); // Change 'Creation Caches' for the plural term for your caches
 define("CCNAME_ACT","Creation Caching"); // Change 'Creation Caching' for the activity present participle for your caches
-define("CCSLUG","creationcache"); // Change creationcache for the slug used for your caches
+define("CCSLUG","creationcache"); // Change creationcache for the slug used for your caches. This is the entry needed as posttype
 define("CCVERSION","1.2.0"); // Set the version number
 define("CC_LOGO16","celticcross16x16.png"); // Set this to the 16x16 logo that you want. Copy this logo into the plugin's image subfolder
 define("CC_LOGO80","celticcross80x80.png"); // Set this to the 80x80 logo that you want. Copy this logo into the plugin's image subfolder

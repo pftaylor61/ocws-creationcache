@@ -2,7 +2,7 @@
 // initialize file
 // this file contains the necessary initialize functions for the plugin to work
 
-// This routine ensures thart the plugin requires the Capability Manager Enhanced plugin
+// This routine ensures that the plugin requires the Capability Manager Enhanced plugin
 function ocwscci__register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
@@ -10,6 +10,13 @@ function ocwscci__register_required_plugins() {
 	 */
 	$plugins = array(
 
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Classic Editor',
+			'slug'      => 'classic-editor',
+			'required'  => true,
+		),
+		
 		// This is an example of how to include a plugin bundled with a theme.
 		array(
 			'name'               => 'Capability Manager Enhanced', // The plugin name.

@@ -5,9 +5,9 @@
 Plugin Name: OCWS Creation Cache
 Plugin URI: http://oldcastleweb.com/pws/plugins
 
-Description: This plugin creates a new page type, called creationcache, which displays Creation caches - a version of the geocache system. The plugin has been produced by <a href="http://www.oldcastleweb.com" target="_blank">Old Castle Web Solutions</a>.<br /><br /> The actual name of the caches can be changed from Creation Caches to any other name that you choose, by ediiting a simple configuration file. In order to explain the game of creation caching, there is an extensive backend information page, which appears where a settings page would normally be. This page explains to the site owner how they can go about administering a Creation Cache section on their Wordpress website.<br /><br />I am quite satisfied with the way the system works so far. However, I would welcome reports to the website above.
+Description: This plugin creates a new page type, called creationcache, which displays Creation caches - a version of the geocache system. The plugin has been produced by <a href="http://www.oldcastleweb.com" target="_blank">Old Castle Web Solutions</a>.<br /><br /> The actual name of the caches can be changed from Creation Caches to any other name that you choose, by ediiting a simple configuration file. In order to explain the game of creation caching, there is an extensive backend information page, which appears where a settings page would normally be. This page explains to the site owner how they can go about administering a Creation Cache section on their Wordpress website.<br /><br />I am quite satisfied with the way the system works so far. However, I would welcome reports to the website above.<br /><br />Note that the code for a Creation Cache page would be broken if the Gutenberg editor was used, so this plugin disables the use of Gutenberg, and requires the Classic Editor plugin.
 
-Version: 2.0
+Version: 2.1
 Author: Paul Taylor
 Author URI: http://oldcastleweb.com/pws/about
 License: GPL2
@@ -68,6 +68,16 @@ if (file_exists(OCWSCC_GPX.".loc")) {
 			mkdir(OCWSCC_GPX, 0777, true);
 			//echo OCWSCC_GPX;
 		}
+
+// Prevent the use of Gutenberg in this plugin's UI
+add_filter( ‘gutenberg_can_edit_post_type’, ‘my_gutenberg_can_edit_post_types’ );
+function my_gutenberg_can_edit_post_types( $can_edit, $post_type ) {
+    If ( in_array( $post_type, array( CCSLUG ) ) {
+        return false;
+    }
+
+    return $can_edit;
+}
 
 // require the Capability Manager plugin
 add_action( 'tgmpa_register', 'ocwscci__register_required_plugins' );
