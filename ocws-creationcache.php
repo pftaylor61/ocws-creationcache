@@ -70,15 +70,15 @@ if (file_exists(OCWSCC_GPX.".loc")) {
 		}
 
 // Prevent the use of Gutenberg in this plugin's UI
-/* add_filter( ‘gutenberg_can_edit_post_type’, ‘my_gutenberg_can_edit_post_types’ );
+add_filter( ‘gutenberg_can_edit_post_type’, ‘my_gutenberg_can_edit_post_types’ );
 function my_gutenberg_can_edit_post_types( $can_edit, $post_type ) {
-    If ( in_array( $post_type, array( CCSLUG ) ) {
+    if ( in_array( array( CCSLUG ),$post_type )) {
         return false;
     }
 
     return $can_edit;
 }
-*/
+
 
 // require the Capability Manager plugin
 add_action( 'tgmpa_register', 'ocwscci__register_required_plugins' );
